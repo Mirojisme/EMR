@@ -3,31 +3,114 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f0f0f0;
+    background-color: #d3d9d4;
 }
-        
+
 /* Header styles */
 header {
-    background-color: #333;
-    color: #fff;
-    padding: 20px;
+    background-color: #212a31;
+    color: #d3d9d4;
+    padding: 5px;
     text-align: center;
 }
-        
+
 /* Container styles */
+.nav {
+    background-color: #212a31;
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.nav a {
+    display: block;
+    color: #d3d9d4;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 18px;
+    flex: 1;
+    border-radius: 5px 5px 0 0;
+}
+
+.nav a:hover {
+    background-color: #d3d9d4;
+    color: #212a31;
+}
+
+.nav a.active {
+    background-color: #748d92;
+    color: #212a31;
+}
+
+.nav .icon {
+    display: none;
+}
+
 .container {
     max-width: 960px;
     margin: 0 auto;
     padding: 20px;
 }
-        
+
+.logincontainer {
+    max-width: 350px;
+    margin: 0 auto;
+    padding: 100px;
+}
+
 /* Main content styles */
 .content {
     background-color: #fff;
     padding: 20px;
     border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
 }
+
+.logincontent {
+    background-color: #fff;
+    padding: 20px;
+    padding-top: 5px;
+    border-radius: 5px;
+    box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.3);
+    text-align: center;
+    
+}
+
+.logincontent h2 {
+    padding: 0;
+    font-size: 35px;
+    color: #212a31;
+    font-family: Verdana;
+}
+
+.logincontent form input {
+    outline: none;
+    width: 95%;
+    border: none;
+    box-shadow: 2px 2px 10px 2px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    font-weight: bold;
+    padding: 15px;
+    padding-right: 0px;
+}
+
+.logincontent form button {
+    background-color: #124e66;
+    color: #d3d9d4;
+    width: 100%;
+    font-weight: bold;
+    border-radius: 5px;
+    border: none;
+    padding: 15px;
+    font-size: 18px;
+}
+
+.logincontent form button:hover {
+    transform: scale(1.02);
+    box-shadow: 2px 2px 10px 2px rgba(0, 0, 0, 0.2);
+}
+
 /* testing */
 .meter {
     box-sizing: content-box;
@@ -40,48 +123,76 @@ header {
     box-shadow: inset 0 -1px 1px rgba(255, 255, 255, 0.3);
 }
 
-.progressbar{
+.progressbar {
     background-color: #555;
     padding: 10px;
     margin: 10px;
     border-radius: 25px;
 }
 
-.skill { 
-    background-color: rgb(116, 194, 92); 
-    color: white; 
-    padding: 1%; 
-    text-align: right; 
-    font-size: 20px; 
-    border-radius: 15px; 
-} 
+.skill {
+    background-color: rgb(116, 194, 92);
+    color: white;
+    padding: 1%;
+    text-align: right;
+    font-size: 20px;
+    border-radius: 15px;
+}
 
-.html { 
-    width: 80%; 
-} 
+.html {
+    width: 80%;
+}
 
-.php { 
-    width: 50%; 
-} 
+.php {
+    width: 50%;
+}
 
 
-        
+
 /* Footer styles */
 footer {
-    background-color: #333;
-    color: #fff;
+    background-color: #212a31;
+    color: #d3d9d4;
     padding: 20px;
     text-align: center;
 }
-        
+
 /* Responsive styles */
-@media (max-width: 768px) {
+@media (max-width: 600px) {
+    .nav a:not(:first-child) {
+        display: none;
+    }
+
+    .nav a.icon {
+        float: right;
+        display: block;
+    }
+
+    .nav.responsive {
+        position: relative;
+        display: block;
+    }
+
+    .nav.responsive a.icon {
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+
+    .nav.responsive a {
+        float: none;
+        display: block;
+        text-align: left;
+    }
+
     .container {
         padding: 10px;
     }
+
     .content {
         padding: 10px;
     }
+
     footer {
         padding: 10px;
     }
