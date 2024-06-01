@@ -4,7 +4,7 @@ require 'connect.php';
 if (isset($_POST['username'], $_POST['password'])) {
     $user = $_POST['username'];
     $password = $_POST['password'];
-    $stmt = $db->prepare("select id,username,password,name from users where username = :username");
+    $stmt = $db->prepare("select id,username,password from Users where username = :username");
     $stmt->bindParam(':username', $_POST['username'], PDO::PARAM_STR);
     $stmt->execute();
     

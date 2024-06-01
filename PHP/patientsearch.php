@@ -47,10 +47,22 @@
                 if(isset($_POST["lastName"]) || isset($_POST["firstName"]) || isset($_POST["patientID"])){
                     require "patientsearch.php";
                     if(count($results) > 0){
-                        
+                        echo "<table>";
+                        echo "<tr>";
+                        echo "<th>ID</th>";
+                        echo "<th>First Name</th>";
+                        echo "<th>Last Name</th>";
+                        echo "</tr>";
                         foreach($results as $r){
-
+                            echo "<tr>";
+                            echo "<td>" . $r['ID'] . "</td>";
+                            echo "<td>" . $r['firstName'] . "</td>";
+                            echo "<td>" . $r['lastName'] . "</td>";
+                            echo "</tr>";
                         }
+                        echo "</table>";
+                    }else{
+                        echo "no results";
                     }
                 }
             ?>
