@@ -22,9 +22,9 @@
         <h1>Hamptons Heritage Hospital</h1>
     </header>
     <div class="nav" id="mynav">
-       <a href="index.php" class="active">Home</a>
+       <a href="index.php">Home</a>
        <a href="patientsearch.php">Patient Lookup</a>
-       <a href="drsearch.php">Doctor Lookup</a>
+       <a href="drsearch.php" class="active">Doctor Lookup</a>
        <a href="#">Code Lookup</a>
        <a href="#">Settings</a>
        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
@@ -33,17 +33,16 @@
     </div>
     <div class="container">
         <div class="content">
-            <h2>Main Content</h2>
-            <p>This is a simple responsive webpage created using HTML and CSS.</p>
-            <div class="progressbar">
-                <div class="skill html">80%</div>
-            </div>
-            <div class="progressbar">
-                <div class="skill php">50%</div>
-            </div>
-            <div class="progressbar">
-                <div class="skill html">80%</div>
-            </div>
+            <h2>Doctor Search</h2>
+            <form method="post">
+                <label for="lastName">Last Name:</label>
+                <input type="text" name="lastName" id="lastName" /><br /><br />
+                <label for="firstName">First Name:</label>
+                <input type="text" name="firstName" id="firstName" /><br /><br />
+                <label for="patientID">Employee ID:</label>
+                <input type="text" name="patientID" id="patientID" /><br /><br />
+                <input type="submit" value="Submit" />
+            </form>
         </div>
     </div>
 

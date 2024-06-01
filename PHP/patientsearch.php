@@ -24,7 +24,7 @@
     <div class="nav" id="mynav">
        <a href="index.php">Home</a>
        <a href="patientsearch.php" class="active">Patient Lookup</a>
-       <a href="#">Doctor Lookup</a>
+       <a href="drsearch.php">Doctor Lookup</a>
        <a href="#">Code Lookup</a>
        <a href="#">Settings</a>
        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
@@ -43,6 +43,17 @@
                 <input type="text" name="patientID" id="patientID" /><br /><br />
                 <input type="submit" value="Submit" />
             </form>
+            <?php
+                if(isset($_POST["lastName"]) || isset($_POST["firstName"]) || isset($_POST["patientID"])){
+                    require "patientsearch.php";
+                    if(count($results) > 0){
+                        
+                        foreach($results as $r){
+
+                        }
+                    }
+                }
+            ?>
         </div>
     </div>
 
