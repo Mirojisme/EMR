@@ -23,9 +23,9 @@
     </header>
     <div class="nav" id="mynav">
        <a href="index.php">Home</a>
-       <a href="patientsearch.php">Patient Lookup</a>
+       <a href="patientsearch.php">Patient Dashboard</a>
        <a href="drsearch.php" class="active">Doctor Lookup</a>
-       <a href="#">Code Lookup</a>
+       <a href="#">Calender</a>
        <a href="#">Settings</a>
        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
            <i class="fa fa-bars"></i>

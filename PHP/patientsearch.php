@@ -23,18 +23,30 @@
     </header>
     <div class="nav" id="mynav">
        <a href="index.php">Home</a>
-       <a href="patientsearch.php" class="active">Patient Lookup</a>
+       <a href="patientsearch.php" class="active">Patient Dashboard</a>
        <a href="drsearch.php">Doctor Lookup</a>
-       <a href="#">Code Lookup</a>
+       <a href="#">Calender</a>
        <a href="#">Settings</a>
+       <div class="dropdown">
+            <button class="dropbtn">More</button>
+            <div class="dropdowncontent">
+                <a href="">Patient Search</a>
+                <a href="">Add New Patient</a>
+                <a href="">link3</a>
+            </div>
+       </div>
        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
            <i class="fa fa-bars"></i>
        </a>
     </div>
     <div class="container">
-        <div class="content">
+        <div class="searchtitle">
             <h2>Patient Search</h2>
-            <form method="post">
+            <a href="#">+ New Patient</a>
+        </div>
+        <div class="searchcontent">
+            
+            <form method="post" action="patientsearch.php">
                 <label for="lastName">Last Name:</label>
                 <input type="text" name="lastName" id="lastName" /><br /><br />
                 <label for="firstName">First Name:</label>
@@ -44,26 +56,8 @@
                 <input type="submit" value="Submit" />
             </form>
             <?php
-                if(isset($_POST["lastName"]) || isset($_POST["firstName"]) || isset($_POST["patientID"])){
-                    require "patientsearch.php";
-                    if(count($results) > 0){
-                        echo "<table>";
-                        echo "<tr>";
-                        echo "<th>ID</th>";
-                        echo "<th>First Name</th>";
-                        echo "<th>Last Name</th>";
-                        echo "</tr>";
-                        foreach($results as $r){
-                            echo "<tr>";
-                            echo "<td>" . $r['ID'] . "</td>";
-                            echo "<td>" . $r['firstName'] . "</td>";
-                            echo "<td>" . $r['lastName'] . "</td>";
-                            echo "</tr>";
-                        }
-                        echo "</table>";
-                    }else{
-                        echo "no results";
-                    }
+                if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+                    require "searchpatient.php";
                 }
             ?>
         </div>
